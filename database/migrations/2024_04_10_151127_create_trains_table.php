@@ -14,16 +14,6 @@ return new class extends Migration
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
 
-     // aggiungiamo la colonna per il titolo del film
-              $table->string('Azienda', 200);
-            /*$table->string('Stazione di partenza ', 200);
-             $table->string('Stazione di arrivo', 200);
-             $table->timestamp('Orario di partenza');
-             $table->timestamp('Orario di arrivo');
-             $table->mediumInteger('Codice Treno');
-             $table->smallInteger('Numero Carrozze');
-             $table->boolean('In orario')->nullable();
-             $table->boolean('Cancellato')->nullable();*/
 
             $table->timestamps();
         });
@@ -34,23 +24,12 @@ return new class extends Migration
      */
     public function down(): void
     {
+        // qui dovremmo scrivere tutto il codice che ci permette di "tornare indietro nel tempo" a prima che questa migration fosse eseguita
+        // questa funzione (sempre inserita di default grazie a laravel) elimina la tabella
         Schema::dropIfExists('trains');
+      
+        
 
-         /*
-        Schema::dropIfExists('trains',function (Blueprint $table){
-
-        // rimuovere la colonna dalla tabella
-             $table->dropColumn('Azienda');
-             $table->dropColumn('Stazione di partenza');
-             $table->dropColumn('Stazione di arrivo');
-             $table->dropColumn('Orario di partenza');
-             $table->dropColumn('Orario di arrivo');
-             $table->dropColumn('Codice Treno');
-             $table->dropColumn('Numero Carrozze');
-             $table->dropColumn('In orario');
-             $table->dropColumn('Cancellato');
-
-        }); */
     }
 };
 
