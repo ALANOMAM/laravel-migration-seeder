@@ -21,7 +21,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('trains', function (Blueprint $table) {
-            //
+            //supponiamo che voglio aggiungere un'altra colonna alla mia tabella
+            //la posso aggiungere da qui se voglio ma devo per forza mettere nella funzione 
+            //"down" l'anullamento di questa cosa.. una volta aggiunto tutto faccio un push nel database
+            //con "php artisan migrate" e se in futuro voglio tornare indietro di questa soecifica modifica
+            //devo farlo con 
+
+           // $table->string('Nome Capotreno');
         });
     }
 
@@ -31,7 +37,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('trains', function (Blueprint $table) {
-            //
+            //dove faccio il contrario di quello che ho fatto sopra
+
+           // $table->dropColumn('Nome Capotreno');
         });
     }
 };
