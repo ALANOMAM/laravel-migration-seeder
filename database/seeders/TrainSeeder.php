@@ -16,10 +16,13 @@ class TrainSeeder extends Seeder
      */
     public function run(): void
     {
+
         //creo un nuovo oggetto che conterrà le info delle mie nuove righe
         $newTrain = new Train();
 
         //popolo una riga della mia tabella rispettando il tipo di dato di ogni colonna.
+        //ovviamente se metto tutto questo dentro un ciclo for con n iterazioni di darà n righe ripetute.
+        //questo ciclo deve iniziare pero sopra la righa " $newTrain = new Train();" e finire sotto la righa "$newTrain->save();"
         $newTrain->Azienda = "TrainItalia";
         $newTrain->Stazione_di_partenza = "Bologna";
         $newTrain->Stazione_di_arrivo = "Milano";
