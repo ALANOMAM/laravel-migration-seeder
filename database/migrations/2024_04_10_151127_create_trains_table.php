@@ -18,13 +18,13 @@ return new class extends Migration
             $table->id();
            // aggiungiamo le colonne della nostra tabella trains 
                  $table->string('Azienda');  
-               $table->string('Stazione di partenza');
-             $table->string('Stazione di arrivo');
-              $table->time('Orario di partenza');
-             $table->time('Orario di arrivo');
-             $table->mediumInteger('Codice Treno');
-             $table->smallInteger('Numero Carrozze');
-             $table->boolean('In orario')->nullable();
+               $table->string('Stazione_di_partenza');
+             $table->string('Stazione_di_arrivo');
+              $table->time('Orario_di_partenza');
+             $table->time('Orario_di_arrivo');
+             $table->mediumInteger('Codice_Treno');
+             $table->smallInteger('Numero_Carrozze');
+             $table->boolean('In_orario')->nullable();
              $table->boolean('Cancellato')->nullable();
             $table->timestamps();
         });
